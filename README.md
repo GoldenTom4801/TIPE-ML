@@ -6,10 +6,30 @@ Ce TIPE a pour but d'étudier la génération automatique de texte par la créat
 - La génération par réseau de neuronne 
 
 
+
 - Schéma de Markov : Solution naïve
-On construit le texte de façon itérative mot à mot. A chaque mot (ou vecteur de mot), on associe une certaine probabilité d'avoir un prochain mot. L'entrainement de l'algorithme se fait à partir d'un corpus de texte. 
+On construit le texte de façon itérative mot à mot. A chaque mot (ou vecteur de mot), on associe une certaine probabilité d'avoir un prochain mot. L'entrainement de l'algorithme se fait à partir d'un corpus de texte. On s'appuie sur un schéma de Markov d'ordre 1 (pas sûr que ce terme existe vraiment)
 On extrait le vocabulaire. Pour chaque mot présent dans le texte, on regarde l'ensemble des mots suivants que l'on dénombre avec multiplicité. On associe ensuite une probabilité suivant la multiplicité.
-On peut ainsi générer un texte de longueur arbitraire.
+On peut ainsi générer un texte de longueur arbitraire en fournissant un premier mot (présent dans le vocabulaire).
 
 Possibilités:
-- Forcer
+- S'arrêter lorsqu'on rencontre un point
+- On pourra changer d'ordre en se ramenant à des vecteurs de mots (la complexité explose, en O(len(vocabulaire) ** n) où n désigne est l'ordre choisie (on s'intéresse à la suite de n mots)
+
+Mise en place :
+- On utilise un dictionnaire pour faire le dénombrement en parcourant le texte mot à mot
+- On choisit au hasard le prochain mot et on continue
+
+Avantage:
+- Simplicité de mise en place (entrainement)
+- On a l'espoir que l'on puisse retrouver du sens parce que l'enchainement des mots provient de vrais phrases
+
+Inconvénient :
+- Beh ça marche pas super bien 
+
+Ce que je prévois pour cette solution :
+- Markov donnera surement de meilleure texte si on utilise un corpus qui se base sur le même thème. On espère alors que les phrases seront tous sur ce thème et puissent s'enchainer assez bien.
+-> A tester (longueur des textes utilisés, corpus sur le même thème ou pas 
+
+- Structure de Chomsky du langage :
+Une structure grammaticale (simplifiée) du langage natural selon le travail d
