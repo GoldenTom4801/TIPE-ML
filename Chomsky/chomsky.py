@@ -26,17 +26,17 @@ class Generateur(object):
         article = random.choice(self.articles)
         nom = random.choice(self.noms)
         adj = random.choice(self.adjs)
-        return article + " " + nom + " " + adj
-    
+        return "{0} {1} {2}".format(article, nom, adj)
+
     def gen_phrase_verbale(self):
         verbe = random.choice(self.verbes)
         complement = self.gen_phrase_nominale()
-        return verbe + " " + complement
+        return "{0} {1}".format(verbe, complement)
     
     def gen_phrase(self):
         nominal = self.gen_phrase_nominale()
         verbal = self.gen_phrase_verbale()
-        return nominal + " " + verbal
+        return "{0} {1}".format(nominal, verbal)
     
     def output_phrase(self):
         self.output_file.write(self.gen_phrase())
