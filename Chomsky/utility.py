@@ -9,6 +9,7 @@ def concat(*args):
     sans_vide = del_vide(args)
     for i in range(len(sans_vide)-1):
         texte += sans_vide[i] + " "
+        
     return texte + sans_vide[-1]
     
 def del_vide(liste):
