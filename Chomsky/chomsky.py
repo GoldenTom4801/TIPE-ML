@@ -90,8 +90,9 @@ class Generateur(object):
     def output_phrase(self):
         self.output_file.write(self.gen_phrase())
         
-    def output_paragraphe(self,n):
-        self.output_file.write(self.gen_paragraphe(n))
+    def output_paragraphe(self,n, commentaire):
+        texte = "#" + commentaire + "\n" + self.gen_paragraphe(n)
+        self.output_file.write(texte)
     
     
         
