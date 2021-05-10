@@ -1,0 +1,7 @@
+Liste d'adjectif data/adjs.txt :
+http://www.nurykabe.com/dump/text/lists/
+Yann van der Cruyssen.
+
+Liste d'adverbe data/advs.txt :
+http://www.nurykabe.com/dump/text/lists/
+Yann van der Cruyssen.
