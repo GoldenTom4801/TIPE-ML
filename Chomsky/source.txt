@@ -5,3 +5,5 @@ Yann van der Cruyssen.
 Liste d'adverbe data/advs.txt :
 http://www.nurykabe.com/dump/text/lists/
 Yann van der Cruyssen.
+
+Pareils pour tous les autres fichiers de /data
