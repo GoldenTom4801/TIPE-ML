@@ -1,0 +1,8 @@
+11/05:
+Il faut discuter de la pertinence de garder les points dans les mots pour le
+dictionnaire.
+
+Penser à bien utiliser le temps comme critère de performance aussi
+
+Pour les majuscules, problème avec les noms propres (c'est du détail, on pourrait 
+vérifier qu'il ya un point avant pour éviter une partie des erreurs)

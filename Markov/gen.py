@@ -1,4 +1,5 @@
 import markov
 
-gen = GenMarkov("data/fables_fontaine.txt")
-print(gen.genTexte(15, "les"))
+with markov.GenMarkov("data/fables_fontaine.txt", "output/test_fables_fontaine.txt") as gen:
+    #print(gen.genParagraphe("les"))
+    gen.writeParagraphe("les")
