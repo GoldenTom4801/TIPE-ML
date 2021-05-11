@@ -183,7 +183,7 @@ def entrainement(nb_epochs):
             indice_contexte = donnees_entrainement(texte, indice)
             
             vect_input, vect_contexte = one_hot_vector(mots_ind[texte[indice]], indice_contexte)
-            if indice % 2000 == 0:
+            if indice % 100 == 0:
                 print(str(indice/len(texte)/100) + "%")
             
             
