@@ -16,6 +16,8 @@ ALPHA = 0.01 #Facteur d'apprentissage. Choisi ici au hasard pour l'instant
 poids_entree = None
 poids_cachee = None
 
+output = "loss.txt"
+
 texte = lire_fichier("input/fables_fontaine.txt") #On récupère les données à partir de "lecture"
 taille_vocab = len(set(texte))
 mots_ind, ind_mots = creer_correspondance(texte)
@@ -175,27 +177,31 @@ def entrainement(nb_epochs):
     coord = []
     for i in range(nb_epochs):
         loss = 0
-        print(len(texte))
         for indice in range(TAILLE_CONTEXTE, len(texte) - TAILLE_CONTEXTE):
             #indice = random.randint(TAILLE_CONTEXTE, len(texte) - TAILLE_CONTEXTE-1)
             #indice = 9
             indice_contexte = donnees_entrainement(texte, indice)
             
             vect_input, vect_contexte = one_hot_vector(mots_ind[texte[indice]], indice_contexte)
-            if indice % 1000 == 0:
-                print(indice, len(texte))
+            if indice % 2000 == 0:
+                print(str(indice/len(texte)/100) + "%")
             
             
             loss += update_poids(mots_ind[texte[indice]], vect_contexte)
             #print(loss)
         if i % 1 == 0:
             print("epoch " + str(i) + ", coût :" + str(loss))
+            enregistrer_donnees("fontaine" + str(i))
+            
             #coord.append(poids_entree[0,0])
             #cout.append(loss)
             """cout, ind = dictio[texte[indice]]
             cout.append(loss)
             ind.append(i)"""
         loss_value.append(loss)
+        
+    with open(dossier + output, "w") as f:
+        f.write(str(loss_value))
         
     """donnes = dictio.items()
     for key, (cout, indice) in donnes:
@@ -205,6 +211,9 @@ def entrainement(nb_epochs):
     plt.show()
 
 def generer_texte(first_word, longueur): # La fonction qui permettra ensuite de créer un texte
+    
+    
+    
     texte = []
     mot = first_word
     texte.append(mot)
@@ -217,18 +226,18 @@ def generer_texte(first_word, longueur): # La fonction qui permettra ensuite de 
     return " ".join(texte)
     
  
-#init_couche_cachee()
-#init_couche_entree()
+init_couche_cachee()
+init_couche_entree()
 
-lecture_donnes("fable_fontaine_50")
+#lecture_donnes("fable_fontaine_50")
 
-#entrainement(50)
+entrainement(50)
 
-#enregistrer_donnees("fable_fontaine_50")
+enregistrer_donnees("fable_fontaine_50")
 
 
 
-print(generer_texte("les",50)) #Le programme est actuellement (un peu) entrainé, faire des testes de générations de phrases
+#print(generer_texte("les",50)) #Le programme est actuellement (un peu) entrainé, faire des testes de générations de phrases
 
 #print(matrice_representation)
 #print(ind_vecteurs_mots(vecteur))

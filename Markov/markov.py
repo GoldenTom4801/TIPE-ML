@@ -76,18 +76,19 @@ class GenMarkov:
     
 
     
-    def genParagraphe(self,motInitial):
-        long = random.randint(30, 50)
+    def genParagraphe(self,motInitial, long = 0):
+        long = 30 if long == 0 else long
+            
         texte = ""
         for i in range(long-1):
             motsPhrase = self.genPhraseBrute(motInitial)
             motInitial = random.choice(self.dic[motsPhrase[-1]])
-            texte += " ".join(motsPhrase) + "\n"
+            texte += " ".join(motsPhrase) + "\n\n"
         return texte
     
-    def writeParagraphe(self, motInitial):
+    def writeParagraphe(self, motInitial, long):
         deb = time.time()
-        self.outputFile.write(self.genParagraphe(motInitial) 
+        self.outputFile.write(self.genParagraphe(motInitial, long) 
             + "\nDurée de génération :{0}".format(str(time.time()-deb)
             + "\nDurée de création du dictionnaire : {0}".format(self.constructionTime)))
                             
