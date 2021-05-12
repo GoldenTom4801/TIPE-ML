@@ -5,7 +5,10 @@ Ce TIPE a pour but d'étudier la génération automatique de texte par la créat
 - La génération suivant une structure de langage issue de la classification des langages de Chomsky
 - La génération par réseau de neuronne 
 
+Traitement du Langage Naturel (TLN):
+ou NLP (Natural Language Processing) en anglais
 
+Algorithmes connus en TLN
 
 - Schéma de Markov : Solution naïve
 On construit le texte de façon itérative mot à mot. A chaque mot (ou vecteur de mot), on associe une certaine probabilité d'avoir un prochain mot. L'entrainement de l'algorithme se fait à partir d'un corpus de texte. On s'appuie sur un schéma de Markov d'ordre 1 (pas sûr que ce terme existe vraiment)
