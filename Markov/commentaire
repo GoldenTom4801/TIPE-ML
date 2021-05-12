@@ -6,3 +6,9 @@ Penser à bien utiliser le temps comme critère de performance aussi
 
 Pour les majuscules, problème avec les noms propres (c'est du détail, on pourrait 
 vérifier qu'il ya un point avant pour éviter une partie des erreurs)
+
+12/05: RESULTAT !
+Un premier test avec des phrases utilisables.
+On pourra corriger certaines phrases pour pouvoir les présenter.
+Il manque juste une petite mesure pour savoir si la phrase n'a pas été recopié tel quel.
+

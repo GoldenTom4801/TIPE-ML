@@ -3,6 +3,14 @@ import re
 
 # Fonctions utiles dans tout le projet 
 
+
+def fold_left(f, a, liste):
+    for b in liste:
+        a = f(a, b)
+    return a
+
+
+
 def minuscule(mot):
     return mot.lower()
 
