@@ -12,3 +12,7 @@ Un premier test avec des phrases utilisables.
 On pourra corriger certaines phrases pour pouvoir les présenter.
 Il manque juste une petite mesure pour savoir si la phrase n'a pas été recopié tel quel.
 
+2e: il faut affiner la mesure.
+Notamment, le nombre moyen tel que (parmi tous les mots de la phrase) n'a pas d'intérêt.
+Il vaut peut être mieux compter le nombre de mots rares (genre < 5 ou 10 apparitions dans le texte)
+

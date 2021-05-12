@@ -3,7 +3,6 @@ import markov
 
 
 def evaluation(path):
-    print("Evaluation de phrase : Commencer (Enter)")
     gen = markov.GenMarkov("data/fables_fontaine.txt", "void")
     
     f = open(path, "w")
@@ -50,5 +49,5 @@ def evaluation(path):
     
     
     
-path = "output/evaluation/phrases.txt"   
-#evaluation(path)
+path = "output/evaluation2/phrases.txt"   
+evaluation(path)

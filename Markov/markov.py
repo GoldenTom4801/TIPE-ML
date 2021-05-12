@@ -106,11 +106,14 @@ class GenMarkov:
                             
                             
     # Beh renvoie le nombre moyen de successeur 
-    def nbMoyenSuccesseur(self, phrase):
+    def nbMoyenSuccesseur(self, phrase): 
         mots = phrase.split()
 
-        nbMoyen = utility.fold_left((lambda a,b: a + len(self.dic[b])), 0, mots)/len(mots)
+        nbMoyen = utility.fold_left((lambda a,b: a + len(self.dic[b.lower()])), 0, mots)/len(mots)
         return nbMoyen
+    # Note : la mesure n'est pas toujours la plus pertinente
+    # Car les petits mots comme "de" sont de contributions trop grande
+    
         
     # Pour l'instant, la mesure consiste à savoir si un triplet de 3 mots est 
     # présent dans le texte
@@ -123,8 +126,8 @@ class GenMarkov:
         
         for morceau in triplet:
             if morceau in self.texte:
-                return (False, morceau) # On renvoie le fautif
-        return (True, None) #Pour avoir le même type de sortie 
+                return (True, morceau) # On renvoie le fautif
+        return (False, None) #Pour avoir le même type de sortie 
         # C'est un peu violent 
         
         
