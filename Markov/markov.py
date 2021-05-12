@@ -11,7 +11,7 @@ class GenMarkov:
     outputFile = None
     constructionTime = 0
     
-    
+    # Il faut fournir un texte, un fichier pour sauvegarder 
     def __init__(self,path, outputPath):
         self.outputPath = outputPath
         self.texte = utility.read_file(path)
@@ -34,7 +34,7 @@ class GenMarkov:
             else:
                 self.dic[self.texte[ind]] = [self.texte[ind + 1]]
         self.constructionTime = time.time() - deb
-        print(self.constructionTime)
+        print("Temps de construction : {0} sec".format(self.constructionTime))
         
     #Donne le prochain mot
     #Prend directement en compte les multiplicités
