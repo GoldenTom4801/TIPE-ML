@@ -1,16 +1,17 @@
-
-# Fonctions pour le reste (à copier/copier dans 
-
-def fold_left(f, a, liste):
-    for b in liste:
-        a = f(a, b)
-    return a
-
-
-# --
-
 import json
 import urllib.request
+
+class nature: # Remplace une énumération
+    nom_masculin: Int = 0
+    nom_feminin: Int = 1
+    verbe:Int = 2
+    adjectif: Int = 3
+    adverbe: Int = 4
+    preposition: Int = 5
+    determinant: Int = 6
+    autre: Int = 7
+     
+
 
 def getNature(mot):
     # Donnée pour compléter l'url afin de faire la recherche
@@ -33,8 +34,3 @@ def getNature(mot):
     
     data = json.load(jsonDonnee)[0] # On extrait une liste de json, on récupère le premier élément
     return data["nature"]
-    
-# --
-
-
-
